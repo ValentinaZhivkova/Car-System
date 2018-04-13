@@ -1,0 +1,35 @@
+.comment{
+  width: 35%;
+  margin:  20px auto;
+}
+.like-button{
+  background-color: green;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 15px;
+  color: white;
+}
+h1{
+  font-weight: bold;
+}
+.car-details{
+  width: 35%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  text-align: left;
+  margin: 30px auto;
+  box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.25);
+}
+.car-details img{
+  width: 100%;
+}
+select{
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 0 5px;
+  color: green;
+  font-weight: bold;
+}

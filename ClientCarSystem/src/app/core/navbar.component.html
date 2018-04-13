@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li *ngIf="authenticated"><a routerLink="/cars/add">Add Car</a></li>
+      <li *ngIf="authenticated"><a routerLink="/cars/all">List Cars</a></li>
+      <li *ngIf="authenticated"><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
+      <li *ngIf="authenticated"><a routerLink="/users/profile">My Cars</a></li>
+      <li *ngIf="authenticated">Welcome {{username}}!</li>
+      <li *ngIf="!authenticated"><a routerLink="/users/register">Register</a></li>
+      <li *ngIf="!authenticated"><a routerLink="/users/login">Login</a></li>
+    </ul>
+  </nav>
+</header>

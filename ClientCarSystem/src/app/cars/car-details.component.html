@@ -1,0 +1,44 @@
+<div>
+  <h1>Details</h1>
+  <span *ngIf="car.likes.length > 1">{{car.likes}} Likes</span>
+  <span *ngIf="!(car.likes.length > 1)">{{car.likes}} Like</span>
+  <button (click)="likeCar()" class="like-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Like</button>
+  <section class="car-details">
+    <img *ngIf="car.image" [src]="car.image" alt="car image" class="car-image"/>
+    <p><span>Make: </span>{{car.make}}</p>
+    <p><span>Model: </span>{{car.model}}</p>
+    <p><span>Price: </span>{{car.price}}</p>
+    <p><span>Millage: </span>{{car.millage}}</p>
+    <p><span>Engine: </span>{{car.engine}}</p>
+  </section>
+</div>
+
+<div>
+  <form #reviewForm="ngForm" (submit)="submitReview()">
+    <div class="form-group">
+      <label for="rating">RATING</label>
+      <select type="text" id="rating" name="rating" [(ngModel)]="review.rating">
+        <option *ngFor="let number of [1, 2, 3, 4, 5]" [value]="number">{{number}}</option>
+      </select>
+    </div>
+    <div class="comment">
+      <label for="comment">Comment</label>
+      <textarea type="text" class="form-control" id="comment" name="comment" [(ngModel)]="review.comment"></textarea>
+    </div>
+
+    <button type="submit" [disabled]="!reviewForm.form.valid"
+            class="btn btn-success">Submit
+    </button>
+  </form>
+</div>
+<div *ngIf="carReviews.length > 0">
+  <div *ngFor="let review of carReviews">
+    <div>Rating {{review.rating}} Comment: {{review.comment}}</div>
+    <div>Created by {{review.user}}
+      <span *ngIf="review.createdOn"> on{{review.createdOn | date}}</span>
+      <span *ngIf="!review.createdOn">just now</span>
+    </div>
+  </div>
+</div>
+
+

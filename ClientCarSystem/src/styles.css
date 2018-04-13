@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+.car-container img{
+  width: 250px;
+}
+.car-container div{
+  margin-bottom: 50px;
+}
+.form-group{
+  width: 35%;
+  margin: 0 auto;
+}

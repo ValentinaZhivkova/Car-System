@@ -1,0 +1,13 @@
+<h3>My Cars</h3>
+<div class="car-container">
+  <div *ngIf="currentUserCars.length > 0">
+    <div *ngFor="let car of currentUserCars">
+      <img [src]="car.image" alt="car image"/>
+      {{car.make}} {{car.model}}
+      {{car.price}}
+      {{car.millage}}
+      {{car.engine}}
+      <button (click)="delete(car.id)">Delete</button>
+    </div>
+  </div>
+</div>
